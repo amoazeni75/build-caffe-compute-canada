@@ -1,4 +1,4 @@
-# Build Caffe on Compute Canada Servers
+# Building Caffe on Compute Canada Servers
 
 
 
