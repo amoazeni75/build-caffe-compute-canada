@@ -2,6 +2,7 @@
 
 
 
+
 First, you need to download the latest version of Coffee. Go to your home directory and run the following command:
 
     git clone https://github.com/BVLC/caffe.git
@@ -24,7 +25,7 @@ Inside this file, you should change the following items based on your username o
  1. uncomment `USE_CUDNN := 1 (remove # before it)`
  2. uncomment `OPENCV_VERSION := 3`
  3. uncomment `CUSTOM_CXX := g++`
- 4. set `CUDA_DIR := /cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/gcc7.3/cuda/10.0.130`
+ 4. set `CUDA_DIR := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/cudacore/10.1.243`
  5. remove following lines:
     -gencode arch=compute_20,code=sm_20 \
     	-gencode arch=compute_20,code=sm_21 \
@@ -59,3 +60,5 @@ Before we start building Caffe, we need to build **protobuf** library. Although 
  6. Execute `make install`
  7. Go to home directory. `nano ~/.bashrc`. Set the PATH environment variable to include `<your home directory>/local_pkgs/bin`. You can do it like this: `export PATH=$PATH:/home/your_username/local_pkgs/bin`
  8. Set the LD_LIBRARY_PATH environment variable to include `<your home directory>/local_pkgs/lib`. Iike the step 7, `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/your_username/local_pkgs/lib`
+ 9. You need also add anaconda lib path to the LD_LIBRARY_PATH. Similar to the step 8:
+ 10. `export LD_LIBRARY_PATH=**$LD_LIBRARY_PATH**:/home/samp8/anaconda3/lib`
