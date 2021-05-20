@@ -26,25 +26,36 @@ Inside this file, you should change the following items based on your username o
  3. uncomment `CUSTOM_CXX := g++`
  4. set `CUDA_DIR := /cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/gcc7.3/cuda/10.0.130`
  5. remove following lines:
-    `-gencode arch=compute_20,code=sm_20 \
+    -gencode arch=compute_20,code=sm_20 \
     	-gencode arch=compute_20,code=sm_21 \
     	-gencode arch=compute_30,code=sm_30 \
-    	-gencode arch=compute_35,code=sm_35 \`
+    	-gencode arch=compute_35,code=sm_35 \
 
-6. Change `BLAS := mkl`
-7. For Python, we have two options. First, using python 2.7 and the second is using Python 3.x. There is no difference between them, but in my experience, I would suggest using Python 3.x. I assume you have installed Anaconda. If you did not install Anaconda, no worry, I explain two ways:
- - Using Anaconda:
+ 6. Change `BLAS := mkl`
+ 7. For Python, we have two options. First, using python 2.7 and the second is using Python 3.x. There is no difference between them, but in my experience, I would suggest using Python 3.x. I assume you have installed Anaconda. If you did not install Anaconda, no worry, I explain two ways:
+ 8. Using Anaconda:
 	 - comment these two lines:
 	 - `PYTHON_INCLUDE := /usr/include/python2.7 \
 /usr/lib/python2.7/dist-packages/numpy/core/include`
 	- set: 
-    `ANACONDA_HOME := /home/your_username/anaconda3`
+    ANACONDA_HOME := /home/your_username/anaconda3 
 	 - set:
-    `PYTHON_LIBRARIES := boost_python37-mt python3.7m`
-    `PYTHON_INCLUDE := $(ANACONDA_HOME)/include/python3.7m \
-/home/your_username/anaconda3/envs/env_name/lib/python3.7/site-packages/numpy/core/include`
+    PYTHON_LIBRARIES := boost_python37-mt python3.7m
+    PYTHON_INCLUDE := $(ANACONDA_HOME)/include/python3.7m \
+/home/your_username/anaconda3/envs/env_name/lib/python3.7/site-packages/numpy/core/include
     - comment: `PYTHON_LIB := /usr/lib`
     - uncomment: `PYTHON_LIB := $(ANACONDA_HOME)/lib`
     - uncomment `WITH_PYTHON_LAYER := 1`
-  - Without Anaconda:
+ 9. Without Anaconda:
 	  - The only difference is you should put a correct address to the python files and libs.
+## Before Building Caffe
+Before we start building Caffe, we need to build **protobuf** library. Although both beluga and cedars have this library, we need a specific version that is not installed on them. We need _**protobuf 3.0 alpha**_. Follow these steps:
+
+ 1. inside your home directory, create a folder. for example, `mkdir local_pkgs`. Go to this folder.
+ 2. `wget https://github.com/protocolbuffers/protobuf/releases/download/v3.0.0-alpha-1/protobuf-cpp-3.0.0-alpha-1.tar.gz`
+ 3. `tar -xf protobuf-cpp-3.0.0-alpha-1.tar.gz`
+ 4. Go into the extracted source directory and execute `./configure --prefix=<your home directory>/local_pkgs`
+ 5. Execute `make -j<number of parallel threads>`
+ 6. Execute `make install`
+ 7. Go to home directory. `nano ~/.bashrc`. Set the PATH environment variable to include `<your home directory>/local_pkgs/bin`. You can do it like this: `export PATH=$PATH:/home/your_username/local_pkgs/bin`
+ 8. Set the LD_LIBRARY_PATH environment variable to include `<your home directory>/local_pkgs/lib`. Iike the step 7, `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/your_username/local_pkgs/lib`
