@@ -61,4 +61,8 @@ Before we start building Caffe, we need to build **protobuf** library. Although 
  7. Go to home directory. `nano ~/.bashrc`. Set the PATH environment variable to include `<your home directory>/local_pkgs/bin`. You can do it like this: `export PATH=$PATH:/home/your_username/local_pkgs/bin`
  8. Set the LD_LIBRARY_PATH environment variable to include `<your home directory>/local_pkgs/lib`. Iike the step 7, `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/your_username/local_pkgs/lib`
  9. You need also add anaconda lib path to the LD_LIBRARY_PATH. Similar to the step 8:
- 10. `export LD_LIBRARY_PATH=**$LD_LIBRARY_PATH**:/home/samp8/anaconda3/lib`
+ 10. `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/samp8/anaconda3/lib`
+
+## Preparing the environment to start building Caffe
+In this section, we list the essential libraries you need to include before building Caffe. Be careful about the order of loading libraries and their versions to avoid inconsistency.
+
