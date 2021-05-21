@@ -81,6 +81,7 @@ Now, it's time to build Caffe. Inside the Caffe's root directory:
 
     make clean
     make all
+To buil pycaffe (python interface)
     make pycaffe
     make distribute
     make test
