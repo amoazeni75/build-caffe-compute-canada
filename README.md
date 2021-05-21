@@ -66,3 +66,28 @@ Before we start building Caffe, we need to build **protobuf** library. Although 
 ## Preparing the environment to start building Caffe
 In this section, we list the essential libraries you need to include before building Caffe. Be careful about the order of loading libraries and their versions to avoid inconsistency.
 
+ 
+
+    module purge
+    module load nixpkgs/16.09
+    module load gcc/7.3.0
+    module load opencv/3.4.3
+    module load python/2.7.14
+    module load leveldb
+    module load hdf5
+    module load cuda/10.1
+    module load cudnn/7.6.5
+    module load boost/1.68.0
+    module load cudnn/7.6.5
+    
+   ## Building Caffe
+Now, it's time to build Caffe. Inside the Caffe's root directory:
+
+    make clean
+    make all
+    make pycaffe
+    make distribute
+    make test
+    make runtest
+If you succeed in all the tests then you've successfully installed Caffe in your system ! One good reason to smile !
+    
