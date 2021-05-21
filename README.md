@@ -28,8 +28,7 @@ Inside this file, you should change the following items based on your username o
  5. remove following lines:
     -gencode arch=compute_20,code=sm_20 \
     	-gencode arch=compute_20,code=sm_21 \
-    	-gencode arch=compute_30,code=sm_30 \
-    	-gencode arch=compute_35,code=sm_35 \
+
 
  6. Change `BLAS := mkl`
  7. For Python, we have two options. First, using python 2.7 and the second is using Python 3.x. There is no difference between them, but in my experience, I would suggest using Python 3.x. I assume you have installed Anaconda. If you did not install Anaconda, no worry, I explain two ways:
