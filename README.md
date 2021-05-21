@@ -34,18 +34,16 @@ Inside this file, you should change the following items based on your username o
 
  6. Change `BLAS := mkl`
  7. For Python, we have two options. First, using python 2.7 and the second is using Python 3.x. There is no difference between them, but in my experience, I would suggest using Python 3.x. I assume you have installed Anaconda. If you did not install Anaconda, no worry, I explain two ways:
- 8. Using Anaconda:
+ 8. Without Anaconda:
 	 - comment these two lines:
 	 - `PYTHON_INCLUDE := /usr/include/python2.7 \
 /usr/lib/python2.7/dist-packages/numpy/core/include`
 	- set: 
-    ANACONDA_HOME := /home/your_username/anaconda3 
+    PYTHON_LIBRARIES := boost_python35-mt python3.5m
+    PYTHON_INCLUDE := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/include/python3.5m/ \
+    /home/samp8/.local/lib/python3.5/site-packages
 	 - set:
-    PYTHON_LIBRARIES := boost_python37-mt python3.7m
-    PYTHON_INCLUDE := $(ANACONDA_HOME)/include/python3.7m \
-/home/your_username/anaconda3/envs/env_name/lib/python3.7/site-packages/numpy/core/include
-    - comment: `PYTHON_LIB := /usr/lib`
-    - uncomment: `PYTHON_LIB := $(ANACONDA_HOME)/lib`
+    PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib
     - uncomment `WITH_PYTHON_LAYER := 1`
  9. Without Anaconda:
 	  - The only difference is you should put a correct address to the python files and libs.
@@ -72,12 +70,14 @@ In this section, we list the essential libraries you need to include before buil
     module load nixpkgs/16.09
     module load gcc/7.3.0
     module load opencv/3.4.3
-    module load python/2.7.14
+    module load python/3.5.4
     module load leveldb
     module load hdf5
     module load cuda/10.1
     module load cudnn/7.6.5
     module load boost/1.68.0
+    module load cudnn/7.6.5
+    pip install --user numpy
     
    ## Building Caffe
 Now, it's time to build Caffe. Inside the Caffe's root directory:
