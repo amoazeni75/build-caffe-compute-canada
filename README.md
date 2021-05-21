@@ -74,7 +74,6 @@ In this section, we list the essential libraries you need to include before buil
     module load cuda/10.1
     module load cudnn/7.6.5
     module load boost/1.68.0
-    module load cudnn/7.6.5
     pip install --user numpy
     
    ## Building Caffe
