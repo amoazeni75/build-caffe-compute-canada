@@ -38,11 +38,11 @@ Inside this file, you should change the following items based on your username o
 	 - `PYTHON_INCLUDE := /usr/include/python2.7 \
 /usr/lib/python2.7/dist-packages/numpy/core/include`
 	- set: 
-    PYTHON_LIBRARIES := boost_python35-mt python3.5m
+    `PYTHON_LIBRARIES := boost_python35-mt python3.5m
     PYTHON_INCLUDE := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/include/python3.5m/ \
-    /home/your_username/.local/lib/python3.5/site-packages
+    /home/your_username/.local/lib/python3.5/site-packages`
 	 - set:
-    PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib
+    `PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib`
     - uncomment `WITH_PYTHON_LAYER := 1`
  9. Without Anaconda:
 	  - The only difference is you should put a correct address to the python files and libs.
