@@ -25,7 +25,7 @@ Inside this file, you should change the following items based on your username o
  2. uncomment `OPENCV_VERSION := 3`
  3. uncomment `CUSTOM_CXX := g++`
  4. set `CUDA_DIR := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/cudacore/10.1.243`
- 5. remove following lines:
+ 5. remove following lines: </br>
     	-gencode arch=compute_20,code=sm_20 \
     	-gencode arch=compute_20,code=sm_21 \
 
