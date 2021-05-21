@@ -76,6 +76,15 @@ In this section, we list the essential libraries you need to include before buil
     module load boost/1.68.0
     pip install --user numpy
     
+A good idea is to save the current loaded modules.
+    
+    module save my_modules
+
+Then load it anytime you want by:
+
+    module restore my_modules
+    
+    
    ## Building Caffe
 First, if you are using the python libraries, not from Anaconda, just rename the anaconda directory temporarily until the end of the building procedure.
 Now, it's time to build Caffe. Inside the Caffe's root directory:
