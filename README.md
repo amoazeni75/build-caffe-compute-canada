@@ -2,7 +2,6 @@
 
 
 
-
 First, you need to download the latest version of Coffee. Go to your home directory and run the following command:
 
     git clone https://github.com/BVLC/caffe.git
@@ -41,7 +40,7 @@ Inside this file, you should change the following items based on your username o
 	- set: 
     PYTHON_LIBRARIES := boost_python35-mt python3.5m
     PYTHON_INCLUDE := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/include/python3.5m/ \
-    /home/samp8/.local/lib/python3.5/site-packages
+    /home/your_username/.local/lib/python3.5/site-packages
 	 - set:
     PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib
     - uncomment `WITH_PYTHON_LAYER := 1`
@@ -59,7 +58,7 @@ Before we start building Caffe, we need to build **protobuf** library. Although 
  7. Go to home directory. `nano ~/.bashrc`. Set the PATH environment variable to include `<your home directory>/local_pkgs/bin`. You can do it like this: `export PATH=$PATH:/home/your_username/local_pkgs/bin`
  8. Set the LD_LIBRARY_PATH environment variable to include `<your home directory>/local_pkgs/lib`. Iike the step 7, `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/your_username/local_pkgs/lib`
  9. You need also add anaconda lib path to the LD_LIBRARY_PATH. Similar to the step 8:
- 10. `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/samp8/anaconda3/lib`
+ 10. `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/your_username/anaconda3/lib`
 
 ## Preparing the environment to start building Caffe
 In this section, we list the essential libraries you need to include before building Caffe. Be careful about the order of loading libraries and their versions to avoid inconsistency.
