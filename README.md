@@ -77,6 +77,7 @@ In this section, we list the essential libraries you need to include before buil
     pip install --user numpy
     
    ## Building Caffe
+First, if you are using the python libraries, not from Anaconda, just rename the anaconda directory temporarily until the end of the building procedure.
 Now, it's time to build Caffe. Inside the Caffe's root directory:
 
     make clean
@@ -88,10 +89,11 @@ To build pycaffe (python interface)
     make pycaffe
     make distribute
     
-Finally:
+Finally, you need to request an interactive job to run tests:
 
     make test
     make runtest
 
 If you succeed in all the tests then you've successfully installed Caffe in your system ! One good reason to smile !
+Now you can rename the anaconda directory to its original one.
     
