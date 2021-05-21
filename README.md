@@ -121,7 +121,7 @@ To use pycaffe, you need to install some packages. Follow this section:
     pip install --user google
     pip install --user protobuf
 
-finish, now you can take a rest and have a caffe 😀☕️
+finish, now you can take a rest and have a coffee 😀☕️
 
 Just some notes.
  1. every time you need to load all packages I mentioned.
