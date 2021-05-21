@@ -97,3 +97,22 @@ Finally, you need to request an interactive job to run tests:
 If you succeed in all the tests then you've successfully installed Caffe in your system ! One good reason to smile !
 Now you can rename the anaconda directory to its original one.
     
+To use pycaffe, you need to update your ~/.bashrc file.
+
+    nano ~/.bashrc
+
+Add this line at the end of your file:
+
+    export PYTHONPATH=$PYTHONPATH:/home/your_username/caffe/python
+    
+To use pycaffe, you need to install some packages. Follow this section:
+
+    pip install --user networkx==2.2
+    pip install --user scikit-image==0.15.0
+    pip install --user google
+    pip install --user protobuf
+
+finish, now you can take a rest and have a caffe 😀☕️
+
+Just some notes.
+ 1. every time you need to load all packages I mentioned.
