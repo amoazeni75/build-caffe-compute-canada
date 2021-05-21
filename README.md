@@ -81,15 +81,17 @@ Now, it's time to build Caffe. Inside the Caffe's root directory:
 
     make clean
     make all
+    
 To build pycaffe (python interface)
    
 
-     make pycaffe
-     make distribute
+    make pycaffe
+    make distribute
+    
 Finally:
 
-	make test
-	make runtest
+    make test
+    make runtest
 
 If you succeed in all the tests then you've successfully installed Caffe in your system ! One good reason to smile !
     
