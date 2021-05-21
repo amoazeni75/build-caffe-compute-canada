@@ -26,7 +26,7 @@ Inside this file, you should change the following items based on your username o
  3. uncomment `CUSTOM_CXX := g++`
  4. set `CUDA_DIR := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/cudacore/10.1.243`
  5. remove following lines:
-    -gencode arch=compute_20,code=sm_20 \
+    	-gencode arch=compute_20,code=sm_20 \
     	-gencode arch=compute_20,code=sm_21 \
 
 
@@ -34,11 +34,11 @@ Inside this file, you should change the following items based on your username o
  7. For Python, we have two options. First, using python 2.7 and the second is using Python 3.x. There is no difference between them, but in my experience, I would suggest using Python 3.x. I assume you have installed Anaconda. If you did not install Anaconda, no worry, I explain two ways:
  8. Without Anaconda:
 	 - comment these two lines:
-	 - `PYTHON_INCLUDE := /usr/include/python2.7 \
-/usr/lib/python2.7/dist-packages/numpy/core/include`
+	 `PYTHON_INCLUDE := /usr/include/python2.7 \
+		/usr/lib/python2.7/dist-packages/numpy/core/include`
 	- set: 
-    `PYTHON_LIBRARIES := boost_python35-mt python3.5m
-    PYTHON_INCLUDE := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/include/python3.5m/ \
+    `PYTHON_LIBRARIES := boost_python35-mt python3.5m`
+    `PYTHON_INCLUDE := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/include/python3.5m/ \
     /home/your_username/.local/lib/python3.5/site-packages`
 	 - set:
     `PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib`
