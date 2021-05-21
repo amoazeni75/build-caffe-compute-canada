@@ -44,8 +44,8 @@ Inside this file, you should change the following items based on your username o
 	 - set:
     `PYTHON_LIB := /cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/python/3.5.4/lib`
     - uncomment `WITH_PYTHON_LAYER := 1`
- 9. Without Anaconda:
-	  - The only difference is you should put a correct address to the python files and libs.
+ 9. With Anaconda:
+	  - The only difference is you should put a correct address to the python files and libs inside Anaconda directory.
 ## Before Building Caffe
 Before we start building Caffe, we need to build **protobuf** library. Although both beluga and cedars have this library, we need a specific version that is not installed on them. We need _**protobuf 3.0 alpha**_. Follow these steps:
 
